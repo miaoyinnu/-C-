@@ -2,17 +2,17 @@
 #include<string.h>
 void print_menu()
 {
-    printf("******Ñ§Éú³É¼¨ÏµÍ³²Ëµ¥*******\n");
-    printf("1. °´ĞÕÃûÅÅĞò£¬Êä³ö\n");
-    printf("2. °´Æ½¾ù³É¼¨ÅÅĞò£¬Êä³ö\n");
-    printf("3. Êä³ö¸ø¶¨Ñ§ÔºÑ§Éú\n");
-    printf("4. Ìí¼ÓÑ§Éú¼°Æä³É¼¨\n");
-    printf("5. ĞŞ¸Ä¸ø¶¨Ñ§Éú³É¼¨ĞÅÏ¢\n");
-    printf("6. °´ĞÕÃû²éÑ¯Ñ§Éú£¬Êä³ö\n");
-    printf("7. É¾³ıÑ§Éú³É¼¨\n");
-    printf("8. ĞŞ¸ÄÏµÍ³ÃÜÂë\n");
-    printf("9. Êä³ö¹Ò¿ÆÑ§ÉúĞÅÏ¢²¢Ç¿µ÷Æä¹ÒµôµÄ¿ÆÄ¿\n");
-    printf("0. ·µ»ØÉÏÒ»¼¶²Ëµ¥\n");
+    printf("******å­¦ç”Ÿæˆç»©ç³»ç»Ÿèœå•*******\n");
+    printf("1. æŒ‰å§“åæ’åºï¼Œè¾“å‡º\n");
+    printf("2. æŒ‰å¹³å‡æˆç»©æ’åºï¼Œè¾“å‡º\n");
+    printf("3. è¾“å‡ºç»™å®šå­¦é™¢å­¦ç”Ÿ\n");
+    printf("4. æ·»åŠ å­¦ç”ŸåŠå…¶æˆç»©\n");
+    printf("5. ä¿®æ”¹ç»™å®šå­¦ç”Ÿæˆç»©ä¿¡æ¯\n");
+    printf("6. æŒ‰å§“åæŸ¥è¯¢å­¦ç”Ÿï¼Œè¾“å‡º\n");
+    printf("7. åˆ é™¤å­¦ç”Ÿæˆç»©\n");
+    printf("8. ä¿®æ”¹ç³»ç»Ÿå¯†ç \n");
+    printf("9. è¾“å‡ºæŒ‚ç§‘å­¦ç”Ÿä¿¡æ¯å¹¶å¼ºè°ƒå…¶æŒ‚æ‰çš„ç§‘ç›®\n");
+    printf("0. è¿”å›ä¸Šä¸€çº§èœå•\n");
     printf("*****************************\n");
     
 }
@@ -21,9 +21,10 @@ void choose_menu()
     void log_in();
     void print_menu();
     void choose_menu();
+    print_menu();
 
     int option;
-    printf("ÇëÊäÈëÊı×Ö0-9½øÈë²Ëµ¥:\n");
+    printf("è¯·è¾“å…¥æ•°å­—0-9è¿›å…¥èœå•:\n");
     scanf("%d",&option);
     
     switch(option)
@@ -76,8 +77,7 @@ void choose_menu()
         case 0:
         {
             log_in();
-    print_menu();
-    choose_menu();
+            choose_menu();
             break;
         }
 
@@ -90,18 +90,53 @@ void choose_menu()
 }
 void log_in()
 {   
-    
-    char name[32]="1234",password[32];
-    printf("ÄãºÃ,ÇëÊäÈëµÇÂ¼ÃÜÂë:\n");
-    scanf("%s",password);
+    FILE *fp_p;
+    char password[32],password_get[32];
+    fp_p=fopen("password.txt","r+");
+    // if(fp_p==NULL)
+    // {
+    //     printf("æ–‡ä»¶æ‰“å¼€å¤±è´¥,è¯·è¾“å…¥å¯†ç \n");
+    //     scanf("%s",password);
+    //     fclose(fp_p);
+    //     fp_p=fopen("password.txt","w+");
+    //     fprintf(fp_p,"%s",password);
+    // }
+    fscanf(fp_p,"%s",password);
 
-    while(strcmp(name,password)!=0)
+    printf("ä½ å¥½,è¯·è¾“å…¥ç™»å½•å¯†ç :\n");
+    scanf("%s",password_get);
+
+    while(strcmp(password,password_get)!=0)
     {
-        printf("ÃÜÂë´íÎó,ÇëÖØĞÂÊäÈë:\n");
-        scanf("%s",password);
+        printf("å¯†ç é”™è¯¯,è¯·é‡æ–°è¾“å…¥:\n");
+        scanf("%s",password_get);
 
     }
-    printf("ÃÜÂëÕıÈ·!\nµÇÂ¼³É¹¦\n");
+
+    printf("å¯†ç æ­£ç¡®,ç™»å½•æˆåŠŸ!\n");
+    fclose(fp_p);
     
 
 }
+
+
+// void get_password()
+// {
+//     FILE *fp_p;
+//     char password[32];
+
+//     fp_p=fopen("password.txt","r+");
+//     if(fp_p==NULL)
+//     {
+//         printf("æ–‡ä»¶æ‰“å¼€å¤±è´¥,è¯·è¾“å…¥å¯†ç \n");
+//         scanf("%s",password);
+//         fp_p=fopen("password.txt","w+");
+//         fprintf(fp_p,password);
+    
+
+
+//     }
+
+
+//     fclose(fp_p);
+// }
