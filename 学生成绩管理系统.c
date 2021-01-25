@@ -1,5 +1,7 @@
 #include<stdio.h>
 #include<string.h>
+//#include<function.h>
+
 void print_menu()
 {
     printf("******学生成绩系统菜单*******\n");
@@ -16,30 +18,17 @@ void print_menu()
     printf("*****************************\n");
     
 }
-int main()
+void choose_menu()
 {   
-    char name[32]="1234",password[32];
-    printf("你好,请输入登录密码:\n");
-    scanf("%s",password);
-
-    while(strcmp(name,password)!=0)
-    {
-        printf("密码错误,请重新输入:\n");
-        scanf("%s",password);
-
-    }
-
-    
-    printf("密码正确!\n登录成功\n");
-
-    print_menu();
+    void log_in();
     int option;
+    printf("请输入数字0-9进入菜单:\n");
     scanf("%d",&option);
     switch(option)
     {   
         case 1:
         {
-            printf("");
+            printf("1");
             break;
         }
         case 2:
@@ -84,7 +73,9 @@ int main()
         }
         case 0:
         {
-            //
+            log_in();
+    print_menu();
+    choose_menu();
             break;
         }
 
@@ -94,6 +85,31 @@ int main()
 
         
     }
+}
+void log_in()
+{   
+    
+    char name[32]="1234",password[32];
+    printf("你好,请输入登录密码:\n");
+    scanf("%s",password);
+
+    while(strcmp(name,password)!=0)
+    {
+        printf("密码错误,请重新输入:\n");
+        scanf("%s",password);
+
+    }
+    printf("密码正确!\n登录成功\n");
+    
+
+}
+int main()
+{   
+    
+
+    log_in();
+    print_menu();
+    choose_menu();
 
 
 
