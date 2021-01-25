@@ -1,14 +1,13 @@
 #include<stdio.h>
 #include<string.h>
 #include "function.h"
-
+#include "struct.c"
 
 int main()
 {   
     
 
     log_in();
-    print_menu();
     choose_menu();
 
 
