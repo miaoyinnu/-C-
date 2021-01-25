@@ -2,36 +2,98 @@
 #include<string.h>
 void print_menu()
 {
-    printf("******Ñ§Éú³É¼¨ÏµÍ³²Ëµ¥*******\n");
-    printf("1. °´ĞÕÃûÅÅĞò£¬Êä³ö\n");
-    printf("2. °´Æ½¾ù³É¼¨ÅÅĞò£¬Êä³ö\n");
-    printf("3. Êä³ö¸ø¶¨Ñ§ÔºÑ§Éú\n");
-    printf("4. Ìí¼ÓÑ§Éú¼°Æä³É¼¨\n");
-    printf("5. ĞŞ¸Ä¸ø¶¨Ñ§Éú³É¼¨ĞÅÏ¢\n");
-    printf("6. °´ĞÕÃû²éÑ¯Ñ§Éú£¬Êä³ö\n");
-    printf("7. É¾³ıÑ§Éú³É¼¨\n");
-    printf("8. ĞŞ¸ÄÏµÍ³ÃÜÂë\n");
-    printf("9. Êä³ö¹Ò¿ÆÑ§ÉúĞÅÏ¢²¢Ç¿µ÷Æä¹ÒµôµÄ¿ÆÄ¿\n");
-    printf("0. ·µ»ØÉÏÒ»¼¶²Ëµ¥\n");
+    printf("******å­¦ç”Ÿæˆç»©ç³»ç»Ÿèœå•*******\n");
+    printf("1. æŒ‰å§“åæ’åºï¼Œè¾“å‡º\n");
+    printf("2. æŒ‰å¹³å‡æˆç»©æ’åºï¼Œè¾“å‡º\n");
+    printf("3. è¾“å‡ºç»™å®šå­¦é™¢å­¦ç”Ÿ\n");
+    printf("4. æ·»åŠ å­¦ç”ŸåŠå…¶æˆç»©\n");
+    printf("5. ä¿®æ”¹ç»™å®šå­¦ç”Ÿæˆç»©ä¿¡æ¯\n");
+    printf("6. æŒ‰å§“åæŸ¥è¯¢å­¦ç”Ÿï¼Œè¾“å‡º\n");
+    printf("7. åˆ é™¤å­¦ç”Ÿæˆç»©\n");
+    printf("8. ä¿®æ”¹ç³»ç»Ÿå¯†ç \n");
+    printf("9. è¾“å‡ºæŒ‚ç§‘å­¦ç”Ÿä¿¡æ¯å¹¶å¼ºè°ƒå…¶æŒ‚æ‰çš„ç§‘ç›®\n");
+    printf("0. è¿”å›ä¸Šä¸€çº§èœå•\n");
     printf("*****************************\n");
     
 }
 int main()
 {   
-    printf("ÄãºÃ,ÇëÊäÈëµÇÂ¼ÃÜÂë:\n");
-
     char name[32]="1234",password[32];
+    printf("ä½ å¥½,è¯·è¾“å…¥ç™»å½•å¯†ç :\n");
     scanf("%s",password);
-    //printf("%d",strcmp(name,password));
-    while(strcmp(name,password)!=0){
-    printf("ÃÜÂë´íÎó,ÇëÖØĞÂÊäÈë:\n");
-    scanf("%s",password);
+
+    while(strcmp(name,password)!=0)
+    {
+        printf("å¯†ç é”™è¯¯,è¯·é‡æ–°è¾“å…¥:\n");
+        scanf("%s",password);
 
     }
 
-    printf("ÃÜÂëÕıÈ·!\nµÇÂ¼³É¹¦\n");
+    
+    printf("å¯†ç æ­£ç¡®!\nç™»å½•æˆåŠŸ\n");
 
     print_menu();
+    int option;
+    scanf("%d",&option);
+    switch(option)
+    {   
+        case 1:
+        {
+            printf("");
+            break;
+        }
+        case 2:
+        {
+            //
+            break;
+        }
+        case 3:
+        {
+            //
+            break;
+        }
+        case 4:
+        {
+            //
+            break;
+        }
+        case 5:
+        {
+            //
+            break;
+        }
+        case 6:
+        {
+            //
+            break;
+        }
+        case 7:
+        {
+            //
+            break;
+        }
+        case 8:
+        {
+            //
+            break;
+        }
+        case 9:
+        {
+            //
+            break;
+        }
+        case 0:
+        {
+            //
+            break;
+        }
+
+        
+        
+
+
+        
+    }
 
 
 
